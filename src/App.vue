@@ -16,8 +16,8 @@ onMounted(() => {
 </script>
 
 <template>
-  <button @click="incrementarContador">Incrementar</button>
   <button @click="decrementarContador">Decrementar</button>
+  <button @click="incrementarContador">Incrementar</button>
   <p>Valor do contador é: {{ contador }}</p>
 </template>
 

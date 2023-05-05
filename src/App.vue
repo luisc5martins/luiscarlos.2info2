@@ -48,21 +48,34 @@
     <option value="se">SE</option>
     <option value="to">TO</option>
   </select>
+
+  <!-- <div class="informacoesadicionais"> -->
   <label name="hobbie">Hobbie:</label>
   <input type="text" name="hobbie" placeholder="Digite seu hobbie">
-  <label name="linguagem">Linguagens de Programação:</label> <br />
-  <label for="linguagemdepgr">Python</label>
-  <input type="checkbox" id="linguagemdepgr" value="languagecode">
-  <label for="linguagemdepgr">JavaScript</label>
-  <input type="checkbox" id="linguagemdepgr" value="languagecode">
-  <label for="linguagemdepgr">Java</label>
-  <input type="checkbox" id="linguagemdepgr" value="languagecode">
-  <label for="linguagemdepgr">C++</label>
-  <input type="checkbox" id="linguagemdepgr" value="languagecode">
+  <div>
+    <label name="linguagem">Linguagens de Programação:</label> <br />
+  </div>
+  <div></div>
+  <!-- <div class="langs"> -->
+    <input type="checkbox" v-model="linguagemdepgr" value="languagecode">
+    <label for="linguagemdepgr">C++</label>
+    <input type="checkbox" v-model="linguagemdepgr" value="languagecode">
+    <label for="linguagemdepgr">JavaScript</label>
+    <input type="checkbox" v-model="linguagemdepgr" value="languagecode">
+    <label for="linguagemdepgr">Java</label>
+    <input type="checkbox" v-model="linguagemdepgr" value="languagecode">
+    <label for="linguagemdepgr">Python</label>
+  <!-- </div> -->
+<!-- </div> -->
+
+<label name="hobbie">Hobbie:</label>
+  <input type="text" name="hobbie" placeholder="Digite seu hobbie">
+
 </template>
 
 <style scoped>
 button {
   font-weight: bold;
 }
+
 </style>

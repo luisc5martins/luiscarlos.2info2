@@ -33,3 +33,11 @@ a,
     padding: 0 2rem;
   }
 }
+
+input {
+  width: 117px;
+}
+
+div, label, input {
+  text-align: center;
+}

@@ -78,7 +78,7 @@ const estado = ref('')
     <br>
     <label name="hobbie">Hobbie:</label>
     <br>
-    <input type="text" name="hobbie" placeholder="Digite seu hobbie">
+    <input type="text" v-model="hobbie" placeholder="Digite seu hobbie">
     <br>
     <label name="linguagem">Linguagens de Programação:</label>
     <br>
@@ -94,14 +94,13 @@ const estado = ref('')
     <input type="checkbox" v-model="linguagemdepgr" value="languagecode">
     <label for="linguagemdepgr">Python</label>
     <br>
-    <label name="hobbie">Biografia:</label>
+    <label name="biografia">Biografia:</label>
     <br>
-    <input type="text" name="biografia" placeholder="Escreva sua biografia">
+    <input type="text" v-model="biografia" placeholder="Escreva sua biografia">
 
     <button type="submit" @click="aceitar = !aceitar">Submit</button>
 
     <div v-if="aceitar" id="div">
-      <img :src="user.avatar" />
       <p>{{ nome }}</p>
       <p>{{ email }}</p>
       <p>{{ senha }}</p>
@@ -109,8 +108,8 @@ const estado = ref('')
       <p>{{ endereço }}</p>
       <p>{{ cidade }}</p>
       <p>{{ estado }}</p>
-      <p>{{ hobbies }}</p>
-      <p>{{ linguagemProg }}</p>
+      <p>{{ hobbie }}</p>
+      <p>{{ linguagemdepgr }}</p>
       <p>{{ biografia }}</p>
     </div>
 

@@ -13,7 +13,7 @@ const estado = ref('')
 const hobbie = ref('')
 const linguagemdepgr = ref('')
 const biografia = ref('')
-const aceitar = ref(false)
+const aceitar = ref(true)
 
 function Submit() {
   if (senha.value != confirmasenha.value) {
@@ -29,7 +29,7 @@ function Submit() {
   <form class="info" @submit.prevent="Submit()">
     <label name="name">Nome:</label>
     <br>
-    <input type="text" v-model="nome" placeholder="Digite seu nome">
+    <input type="text" v-model="name" placeholder="Digite seu nome">
     <br>
     <label name="email">Email:</label>
     <br>
@@ -98,36 +98,36 @@ function Submit() {
     <br>
     <label name="biografia">Biografia:</label>
     <br>
-    <input type="text" v-model="biografia" placeholder="Escreva sua biografia">
-
+    <textarea v-model="biografia" placeholder="Escreva sua biografia" rows="9"></textarea>
+    <br>
     <button type="submit" @click="aceitar = !aceitar">Submit</button>
 
-    <div v-if="aceitar" id="div">
-      <p> eu nome é: {{ nome }}</p>
-      <p>{{ email }}</p>
-      <p>{{ senha }}</p>
-      <p>{{ datanascimento }}</p>
-      <p>{{ endereco }}</p>
-      <p>{{ cidade }}</p>
-      <p>{{ estado }}</p>
-      <p>{{ hobbie }}</p>
-      <p>{{ linguagemdepgr }}</p>
-      <p>{{ biografia }}</p>
-    </div>
-
   </form>
+
+  <div v-if="aceitar" id="div">
+      <p>Seu nome é: {{ name }}</p>
+      <p>Seu email é: {{ email }}</p>
+      <p>Sua senha é: {{ senha }}</p>
+      <p>Sua data de nascimento é: {{ datanascimento }}</p>
+      <p>Seu endereo é: {{ endereco }}</p>
+      <p>Sua cidade é: {{ cidade }}</p>
+      <p>Seu estado é: {{ estado }}</p>
+      <p>Seu Hobbie: {{ hobbie }}</p>
+      <p>Linguagens de programação dominantes: {{ linguagemdepgr }}</p>
+      <p>Sua biografia: {{ biografia }}</p>
+    </div>
 </template>
 
 <style scoped>
 form {
-  background-color: rgb(0, 20, 110);
+  background-color: rgb(110, 0, 0);
   padding: 20px 30px;
-  color: rgb(183, 210, 219);
+  color: white;
   border-radius: 10px;
 }
 
 #div {
-  background-color: rgba(35, 12, 22, 1);
+  background-color: rgb(110, 0, 0);
   padding: 20px 30px;
   color: rgb(183, 210, 219);
   border-radius: 10px;

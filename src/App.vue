@@ -10,14 +10,26 @@ const datanascimento = ref('')
 const endereco = ref('')
 const cidade = ref('')
 const estado = ref('')
+const hobbie = ref('')
+const linguagemdepgr = ref('')
+const biografia = ref('')
+const aceitar = ref(false)
 
+function Submit() {
+  if (senha.value != confirmasenha.value) {
+    alert("As senhas estão diferentes")
+  }
+  else {
+    aceitar.value = !aceitar.value
+  }
+}
 </script>
 
 <template>
-  <form class="info" @submit.prevent="enviar()">
+  <form class="info" @submit.prevent="Submit()">
     <label name="name">Nome:</label>
     <br>
-    <input type="text" v-model="name" placeholder="Digite seu nome">
+    <input type="text" v-model="nome" placeholder="Digite seu nome">
     <br>
     <label name="email">Email:</label>
     <br>
@@ -80,19 +92,9 @@ const estado = ref('')
     <br>
     <input type="text" v-model="hobbie" placeholder="Digite seu hobbie">
     <br>
-    <label name="linguagem">Linguagens de Programação:</label>
+    <label for="linguagemdepgr">Digite suas Linguagens:</label>
     <br>
-    <input type="checkbox" v-model="linguagemdepgr" value="languagecode">
-    <label for="linguagemdepgr">C++</label>
-    <br>
-    <input type="checkbox" v-model="linguagemdepgr" value="languagecode">
-    <label for="linguagemdepgr">JavaScript</label>
-    <br>
-    <input type="checkbox" v-model="linguagemdepgr" value="languagecode">
-    <label for="linguagemdepgr">Java</label>
-    <br>
-    <input type="checkbox" v-model="linguagemdepgr" value="languagecode">
-    <label for="linguagemdepgr">Python</label>
+    <input type="text" v-model="linguagemdepgr">
     <br>
     <label name="biografia">Biografia:</label>
     <br>
@@ -101,11 +103,11 @@ const estado = ref('')
     <button type="submit" @click="aceitar = !aceitar">Submit</button>
 
     <div v-if="aceitar" id="div">
-      <p>{{ nome }}</p>
+      <p> eu nome é: {{ nome }}</p>
       <p>{{ email }}</p>
       <p>{{ senha }}</p>
-      <p>{{ data }}</p>
-      <p>{{ endereço }}</p>
+      <p>{{ datanascimento }}</p>
+      <p>{{ endereco }}</p>
       <p>{{ cidade }}</p>
       <p>{{ estado }}</p>
       <p>{{ hobbie }}</p>
